@@ -13,7 +13,8 @@ private:
 
 public:
     Lector(string numid, string nombre, string contraseña);
-
+    Fecha getFechRegistro();
+    void setFechRegistro(Fecha fechRegistro);
     ~Lector();
 };
 
