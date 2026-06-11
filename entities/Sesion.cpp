@@ -2,7 +2,7 @@
 
 Sesion::Sesion(bool sesion)
 {
-    this->sesion = NULL
+    this->sesion = NULL;
 }
 
 bool Sesion::getSesion()
@@ -10,3 +10,17 @@ bool Sesion::getSesion()
     return this->sesion;
 }
 
+Sesion::~Sesion()
+{
+}
+
+Usuario * Sesion::getUsuarioSesion()
+{
+    return this->u;
+}
+
+void Sesion::setUsuarioSesion(Usuario * u)
+{
+    this->u = u;
+    this->sesion = true;
+}
