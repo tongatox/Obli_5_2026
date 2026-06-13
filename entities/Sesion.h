@@ -6,10 +6,12 @@
 class Sesion
 {
 private:
+    static Sesion *instance;
     bool sesion;
     Usuario * u;
+    Sesion();
 public:
-    Sesion(bool sesion);
+    static Sesion *getInstance();
     bool getSesion();
     ~Sesion();
 

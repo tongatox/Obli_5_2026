@@ -1,11 +1,17 @@
-#ifndef CONTROLADORSESION_H
-#define CONTROLADORSESION_H
+#ifndef CONTROLADORSESION
+#define CONTROLADORSESION
 
 #include "../interfaces/controllers/IControladorSesion.h"
 
 class ControladorSesion : public IControladorSesion
 {
+    private:
+        string numId;
+        string contraseña;
 public:
+    bool ingresarDatos(string numId, string contraseña);
+    void cerrarSesion();
+    void cancelar();
 };
 
 #endif

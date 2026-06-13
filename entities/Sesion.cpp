@@ -1,6 +1,18 @@
 #include "Sesion.h"
 
-Sesion::Sesion(bool sesion)
+Sesion* Sesion::instance = nullptr;
+
+Sesion* Sesion::getInstance()
+{
+    if (instance == nullptr)
+    {
+        instance = new Sesion();
+    }
+    return instance;
+}
+
+
+Sesion::Sesion()
 {
     this->sesion = NULL;
 }
