@@ -2,8 +2,19 @@
 
 Prestamo::Prestamo(Fecha fechasPres, int diasPermi) : fechasPres(fechasPres)
 {
+    this->id = 0;
     this->diasPermi = diasPermi;
     this->material = NULL;
+}
+
+int Prestamo::getId()
+{
+    return this->id;
+}
+
+void Prestamo::setId(int id)
+{
+    this->id = id;
 }
 
 Fecha Prestamo::getFechasPres()

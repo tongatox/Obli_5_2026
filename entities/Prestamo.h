@@ -2,16 +2,19 @@
 #define PRESTAMO
 
 #include "Material.h"
-#include "Fecha.h"
+#include "../datatypes/Fecha.h"
 
 class Prestamo
 {
 private:
+    int id;
     Fecha fechasPres;
     int diasPermi;
     Material * material;
 public:
     Prestamo(Fecha fechasPres, int diasPermi);
+    int getId();
+    void setId(int id);
     Fecha getFechasPres();
     int getDiasPermi();
     void setFechaPres(Fecha fechaPres);
