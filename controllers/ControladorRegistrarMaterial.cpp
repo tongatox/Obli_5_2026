@@ -1,8 +1,8 @@
 #include "ControladorRegistrarMaterial.h"
 
-#include "MaterialCollection.h"
-#include "Libro.h"
-#include "Revista.h"
+#include "../collections/MaterialCollection.h"
+#include "../entities/Libro.h"
+#include "../entities/Revista.h"
 
 
 
@@ -27,7 +27,7 @@ void ControladorRegistrarMaterial::confirmarLibro()
     mc->agregarMaterial(l);
 }
 
-void ControladorRegistrarMaterial::registrarrevista(string codigo, string titulo, int anioPublicacion, int numEdi , bool esMensual )
+void ControladorRegistrarMaterial::registrarRevista(string codigo, string titulo, int anioPublicacion, int numEdi , bool esMensual )
 {
     this->codigo = codigo;
     this->titulo = titulo;

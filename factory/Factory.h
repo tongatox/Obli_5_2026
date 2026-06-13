@@ -7,7 +7,6 @@
 #include "../interfaces/controllers/IControladorVerInfoMaterial.h"
 #include "../interfaces/controllers/IControladorSesion.h"
 #include "../interfaces/controllers/IControladorConsultarPrestamo.h"
-#include "../interfaces/controllers/IControladorVerMateriales.h"
 
 class Factory
 {
@@ -23,7 +22,6 @@ public:
     IControladorVerInfoMaterial *getIControladorVerInfoMaterial();
     IControladorSesion *getIControladorSesion();
     IControladorConsultarPrestamo *getIControladorConsultarPrestamo();
-    IControladorVerMateriales *getIControladorVerMateriales();
     ~Factory();
 };
 

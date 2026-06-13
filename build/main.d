@@ -1,3 +1,3 @@
-build/main.o: main.cpp utils/menu.h cargarDatos.h
-utils/menu.h:
+build/main.o: main.cpp menu/menu.h cargarDatos.h
+menu/menu.h:
 cargarDatos.h:

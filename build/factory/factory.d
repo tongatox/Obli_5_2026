@@ -1,90 +1,86 @@
 build/factory/Factory.o: factory/Factory.cpp factory/Factory.h \
-  interfaces/controllers/IControladorRegistrarUsuario.h \
-  interfaces/controllers/../../datatypes/Fecha.h \
-  interfaces/controllers/../../entities/Usuario.h \
-  interfaces/controllers/IControladorRegistrarMaterial.h \
-  interfaces/controllers/IControladorRegistrarPrestamo.h \
-  interfaces/controllers/../../entities/Prestamo.h \
-  interfaces/controllers/../../entities/Material.h \
-  interfaces/controllers/../../entities/../datatypes/Fecha.h \
-  interfaces/controllers/../../collections/UsuarioCollection.h \
-  interfaces/controllers/../../collections/../entities/Usuario.h \
-  interfaces/controllers/../../collections/MaterialCollection.h \
-  interfaces/controllers/../../collections/../entities/Material.h \
-  interfaces/controllers/../../collections/PrestamoCollection.h \
-  interfaces/controllers/../../collections/../entities/Prestamo.h \
-  interfaces/controllers/IControladorVerInfoMaterial.h \
-  interfaces/controllers/IControladorSesion.h \
-  interfaces/controllers/IControladorConsultarPrestamo.h \
-  interfaces/controllers/IControladorVerMateriales.h \
-  controllers/ControladorRegistrarUsuario.h \
-  controllers/../interfaces/controllers/IControladorRegistrarUsuario.h \
-  controllers/../collections/UsuarioCollection.h \
-  controllers/../datatypes/Fecha.h controllers/../entities/Usuario.h \
-  controllers/../entities/Lector.h \
-  controllers/../entities/../entities/Usuario.h \
-  controllers/../entities/../datatypes/Fecha.h \
-  controllers/../entities/../entities/Prestamo.h \
-  controllers/../entities/Funcionario.h \
-  controllers/ControladorRegistrarMaterial.h \
-  controllers/../interfaces/controllers/IControladorRegistrarMaterial.h \
-  controllers/../collections/MaterialCollection.h \
-  controllers/../entities/Libro.h controllers/../entities/Material.h \
-  controllers/../entities/Revista.h \
-  controllers/ControladorRegistrarPrestamo.h \
-  controllers/../interfaces/controllers/IControladorRegistrarPrestamo.h \
-  controllers/../entities/Prestamo.h \
-  controllers/ControladorVerInfoMaterial.h \
-  controllers/../interfaces/controllers/IControladorVerInfoMaterial.h \
-  controllers/ControladorSesion.h \
-  controllers/../interfaces/controllers/IControladorSesion.h \
-  controllers/ControladorConsultarPrestamo.h \
-  controllers/../interfaces/controllers/IControladorConsultarPrestamo.h \
-  controllers/ControladorVerInfoMateriales.h \
-  controllers/../interfaces/controllers/IControladorVerMateriales.h
+  factory/../interfaces/controllers/IControladorRegistrarUsuario.h \
+  factory/../interfaces/controllers/../../datatypes/Fecha.h \
+  factory/../interfaces/controllers/../../entities/Usuario.h \
+  factory/../interfaces/controllers/IControladorRegistrarMaterial.h \
+  factory/../interfaces/controllers/IControladorRegistrarPrestamo.h \
+  factory/../interfaces/controllers/../../entities/Prestamo.h \
+  factory/../interfaces/controllers/../../entities/Material.h \
+  factory/../interfaces/controllers/../../entities/../datatypes/Fecha.h \
+  factory/../interfaces/controllers/../../collections/UsuarioCollection.h \
+  factory/../interfaces/controllers/../../collections/../entities/Usuario.h \
+  factory/../interfaces/controllers/../../collections/MaterialCollection.h \
+  factory/../interfaces/controllers/../../collections/../entities/Material.h \
+  factory/../interfaces/controllers/../../collections/PrestamoCollection.h \
+  factory/../interfaces/controllers/../../collections/../entities/Prestamo.h \
+  factory/../interfaces/controllers/IControladorVerInfoMaterial.h \
+  factory/../interfaces/controllers/IControladorSesion.h \
+  factory/../interfaces/controllers/IControladorConsultarPrestamo.h \
+  factory/../controllers/ControladorRegistrarUsuario.h \
+  factory/../controllers/../interfaces/controllers/IControladorRegistrarUsuario.h \
+  factory/../controllers/../collections/UsuarioCollection.h \
+  factory/../controllers/../datatypes/Fecha.h \
+  factory/../controllers/../entities/Usuario.h \
+  factory/../controllers/../entities/Lector.h \
+  factory/../controllers/../entities/../entities/Usuario.h \
+  factory/../controllers/../entities/../datatypes/Fecha.h \
+  factory/../controllers/../entities/../entities/Prestamo.h \
+  factory/../controllers/../entities/Funcionario.h \
+  factory/../controllers/ControladorRegistrarMaterial.h \
+  factory/../controllers/../interfaces/controllers/IControladorRegistrarMaterial.h \
+  factory/../controllers/../collections/MaterialCollection.h \
+  factory/../controllers/../entities/Libro.h \
+  factory/../controllers/../entities/Material.h \
+  factory/../controllers/../entities/Revista.h \
+  factory/../controllers/ControladorRegistrarPrestamo.h \
+  factory/../controllers/../interfaces/controllers/IControladorRegistrarPrestamo.h \
+  factory/../controllers/../entities/Prestamo.h \
+  factory/../controllers/ControladorVerInfoMaterial.h \
+  factory/../controllers/../interfaces/controllers/IControladorVerInfoMaterial.h \
+  factory/../controllers/ControladorSesion.h \
+  factory/../controllers/../interfaces/controllers/IControladorSesion.h \
+  factory/../controllers/ControladorConsultarPrestamo.h \
+  factory/../controllers/../interfaces/controllers/IControladorConsultarPrestamo.h
 factory/Factory.h:
-interfaces/controllers/IControladorRegistrarUsuario.h:
-interfaces/controllers/../../datatypes/Fecha.h:
-interfaces/controllers/../../entities/Usuario.h:
-interfaces/controllers/IControladorRegistrarMaterial.h:
-interfaces/controllers/IControladorRegistrarPrestamo.h:
-interfaces/controllers/../../entities/Prestamo.h:
-interfaces/controllers/../../entities/Material.h:
-interfaces/controllers/../../entities/../datatypes/Fecha.h:
-interfaces/controllers/../../collections/UsuarioCollection.h:
-interfaces/controllers/../../collections/../entities/Usuario.h:
-interfaces/controllers/../../collections/MaterialCollection.h:
-interfaces/controllers/../../collections/../entities/Material.h:
-interfaces/controllers/../../collections/PrestamoCollection.h:
-interfaces/controllers/../../collections/../entities/Prestamo.h:
-interfaces/controllers/IControladorVerInfoMaterial.h:
-interfaces/controllers/IControladorSesion.h:
-interfaces/controllers/IControladorConsultarPrestamo.h:
-interfaces/controllers/IControladorVerMateriales.h:
-controllers/ControladorRegistrarUsuario.h:
-controllers/../interfaces/controllers/IControladorRegistrarUsuario.h:
-controllers/../collections/UsuarioCollection.h:
-controllers/../datatypes/Fecha.h:
-controllers/../entities/Usuario.h:
-controllers/../entities/Lector.h:
-controllers/../entities/../entities/Usuario.h:
-controllers/../entities/../datatypes/Fecha.h:
-controllers/../entities/../entities/Prestamo.h:
-controllers/../entities/Funcionario.h:
-controllers/ControladorRegistrarMaterial.h:
-controllers/../interfaces/controllers/IControladorRegistrarMaterial.h:
-controllers/../collections/MaterialCollection.h:
-controllers/../entities/Libro.h:
-controllers/../entities/Material.h:
-controllers/../entities/Revista.h:
-controllers/ControladorRegistrarPrestamo.h:
-controllers/../interfaces/controllers/IControladorRegistrarPrestamo.h:
-controllers/../entities/Prestamo.h:
-controllers/ControladorVerInfoMaterial.h:
-controllers/../interfaces/controllers/IControladorVerInfoMaterial.h:
-controllers/ControladorSesion.h:
-controllers/../interfaces/controllers/IControladorSesion.h:
-controllers/ControladorConsultarPrestamo.h:
-controllers/../interfaces/controllers/IControladorConsultarPrestamo.h:
-controllers/ControladorVerInfoMateriales.h:
-controllers/../interfaces/controllers/IControladorVerMateriales.h:
+factory/../interfaces/controllers/IControladorRegistrarUsuario.h:
+factory/../interfaces/controllers/../../datatypes/Fecha.h:
+factory/../interfaces/controllers/../../entities/Usuario.h:
+factory/../interfaces/controllers/IControladorRegistrarMaterial.h:
+factory/../interfaces/controllers/IControladorRegistrarPrestamo.h:
+factory/../interfaces/controllers/../../entities/Prestamo.h:
+factory/../interfaces/controllers/../../entities/Material.h:
+factory/../interfaces/controllers/../../entities/../datatypes/Fecha.h:
+factory/../interfaces/controllers/../../collections/UsuarioCollection.h:
+factory/../interfaces/controllers/../../collections/../entities/Usuario.h:
+factory/../interfaces/controllers/../../collections/MaterialCollection.h:
+factory/../interfaces/controllers/../../collections/../entities/Material.h:
+factory/../interfaces/controllers/../../collections/PrestamoCollection.h:
+factory/../interfaces/controllers/../../collections/../entities/Prestamo.h:
+factory/../interfaces/controllers/IControladorVerInfoMaterial.h:
+factory/../interfaces/controllers/IControladorSesion.h:
+factory/../interfaces/controllers/IControladorConsultarPrestamo.h:
+factory/../controllers/ControladorRegistrarUsuario.h:
+factory/../controllers/../interfaces/controllers/IControladorRegistrarUsuario.h:
+factory/../controllers/../collections/UsuarioCollection.h:
+factory/../controllers/../datatypes/Fecha.h:
+factory/../controllers/../entities/Usuario.h:
+factory/../controllers/../entities/Lector.h:
+factory/../controllers/../entities/../entities/Usuario.h:
+factory/../controllers/../entities/../datatypes/Fecha.h:
+factory/../controllers/../entities/../entities/Prestamo.h:
+factory/../controllers/../entities/Funcionario.h:
+factory/../controllers/ControladorRegistrarMaterial.h:
+factory/../controllers/../interfaces/controllers/IControladorRegistrarMaterial.h:
+factory/../controllers/../collections/MaterialCollection.h:
+factory/../controllers/../entities/Libro.h:
+factory/../controllers/../entities/Material.h:
+factory/../controllers/../entities/Revista.h:
+factory/../controllers/ControladorRegistrarPrestamo.h:
+factory/../controllers/../interfaces/controllers/IControladorRegistrarPrestamo.h:
+factory/../controllers/../entities/Prestamo.h:
+factory/../controllers/ControladorVerInfoMaterial.h:
+factory/../controllers/../interfaces/controllers/IControladorVerInfoMaterial.h:
+factory/../controllers/ControladorSesion.h:
+factory/../controllers/../interfaces/controllers/IControladorSesion.h:
+factory/../controllers/ControladorConsultarPrestamo.h:
+factory/../controllers/../interfaces/controllers/IControladorConsultarPrestamo.h:

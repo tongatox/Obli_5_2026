@@ -1,7 +1,16 @@
 #include "PrestamoCollection.h"
 
+PrestamoCollection *PrestamoCollection::instance = nullptr;
+
 PrestamoCollection::PrestamoCollection()
 {
+}
+
+PrestamoCollection *PrestamoCollection::getInstance()
+{
+    if (instance == nullptr)
+        instance = new PrestamoCollection();
+    return instance;
 }
 
 Prestamo* PrestamoCollection::buscarPrestamo(int id)
