@@ -7,7 +7,6 @@
 #include "../controllers/ControladorVerInfoMaterial.h"
 #include "../controllers/ControladorSesion.h"
 #include "../controllers/ControladorConsultarPrestamo.h"
-#include "../controllers/ControladorVerInfoMateriales.h"
 
 Factory *Factory::instancia = NULL;
 
@@ -39,7 +38,7 @@ IControladorRegistrarPrestamo *Factory::getIControladorRegistrarPrestamo()
 
 IControladorVerInfoMaterial *Factory::getIControladorVerInfoMaterial()
 {
-    return new ControladorVerInfoMaterial();
+    return new ControladorVerInfoMaterial();    
 }
 
 IControladorSesion *Factory::getIControladorSesion()
@@ -50,11 +49,6 @@ IControladorSesion *Factory::getIControladorSesion()
 IControladorConsultarPrestamo *Factory::getIControladorConsultarPrestamo()
 {
     return new ControladorConsultarPrestamo();
-}
-
-IControladorVerMateriales *Factory::getIControladorVerMateriales()
-{
-    return new ControladorVerInfoMateriales();
 }
 
 Factory::~Factory()
