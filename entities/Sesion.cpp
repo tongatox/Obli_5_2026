@@ -33,6 +33,11 @@ Usuario * Sesion::getUsuarioSesion()
 
 void Sesion::setUsuarioSesion(Usuario * u)
 {
+    if (u == nullptr)
+    {
+        this->sesion = false;
+        this->u = nullptr;
+    }
     this->u = u;
     this->sesion = true;
 }
