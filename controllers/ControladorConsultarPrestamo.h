@@ -6,6 +6,8 @@
 class ControladorConsultarPrestamo : public IControladorConsultarPrestamo
 {
 public:
+    map<int, Prestamo*> consultarTodos() override;
+    Prestamo* consultarPrestamo(int id) override;
 };
 
 #endif

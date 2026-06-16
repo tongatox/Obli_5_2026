@@ -15,6 +15,7 @@ private:
 
 public:
     static PrestamoCollection* getInstance();
+    map<int, Prestamo*> listar();
     Prestamo* buscarPrestamo(int id);
     void agregarPrestamo(Prestamo* prestamo);
     void actualizarPrestamo(Prestamo* prestamo);

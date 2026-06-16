@@ -13,6 +13,11 @@ PrestamoCollection *PrestamoCollection::getInstance()
     return instance;
 }
 
+map<int, Prestamo*> PrestamoCollection::listar()
+{
+    return this->prestamos;
+}
+
 Prestamo* PrestamoCollection::buscarPrestamo(int id)
 {
     map<int, Prestamo*>::iterator it = this->prestamos.find(id);
