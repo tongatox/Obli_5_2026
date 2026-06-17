@@ -19,7 +19,7 @@ public:
     string getTitulo();
     void setAnioPubli(int anioPublicado);
     int getAnioPubli();
-    ~Material();
+    virtual ~Material();
 
     virtual string getTipo() = 0;
 

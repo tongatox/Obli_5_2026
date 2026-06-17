@@ -1,7 +1,7 @@
 #include "Revista.h"
 
 
-Revista::Revista(string codigo, string titulo, int anioPublicado, int numEdi, bool esMenusal) : Material(codigo, titulo, anioPublicado)
+Revista::Revista(string codigo, string titulo, int anioPublicado, int numEdi, bool esMensual) : Material(codigo, titulo, anioPublicado)
 {
     this->numEdi = numEdi;
     this->esMensual = esMensual;

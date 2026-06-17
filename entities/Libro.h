@@ -15,9 +15,9 @@ public:
     int getCantPag();
     void setAutor(string autor);
     void setCantPag(int cantPag);
-    ~Libro();
+    ~Libro() override;
 
-    string getTipo();
+    string getTipo() override;
 };
 
 

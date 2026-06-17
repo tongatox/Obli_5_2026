@@ -9,14 +9,14 @@ private:
     int numEdi;
     bool esMensual;
 public:
-    Revista(string codigo, string titulo, int anioPublicado, int numEdi, bool esMenusal);
+    Revista(string codigo, string titulo, int anioPublicado, int numEdi, bool esMensual);
     int getNumEdi();
     bool getEsMensual();
     void setNumEdi(int numEdi);
     void setEsMensual(bool esMensual);
-    ~Revista();
+    ~Revista() override;
 
-    string getTipo();
+    string getTipo() override;
 };
 
 
