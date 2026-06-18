@@ -326,7 +326,7 @@ static void menuConsultarMisPrestamos()
              << " | Fecha: " << f.getDia() << "/" << f.getMes() << "/" << f.getAnio()
              << " | Dias: " << p->getDiasPermi();
         if (p->getMaterial() != nullptr)
-            cout << " | Material: " << p->getMaterial()->getTitulo();
+            cout << " | " << p->getMaterial()->getTipo() <<": " << p->getMaterial()->getTitulo();
         cout << "\n";
     }
 
