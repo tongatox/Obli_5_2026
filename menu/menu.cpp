@@ -444,7 +444,7 @@ void menuAutenticacion()
             if (iConSesion->ingresarDatos(numId, contrasenia))
             {
                 Usuario* user = Sesion::getInstance()->getUsuarioSesion();
-                cout << "Sesion iniciada exitosamente. Bienvenido/a, "
+                cout << "Bienvenido, "
                      << user->getNombre() << " (" << user->getTipo() << ").\n";
                 menuPrincipal();
             }
