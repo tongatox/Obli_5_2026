@@ -11,7 +11,6 @@
 #include "../interfaces/controllers/IControladorConsultarPrestamo.h"
 #include "../factory/Factory.h"
 #include "../datatypes/Fecha.h"
-#include "../collections/UsuarioCollection.h"
 #include "../entities/Sesion.h"
 #include "../entities/Lector.h"
 #include "../entities/Libro.h"

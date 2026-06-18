@@ -2,13 +2,13 @@
 #include "cargarDatos.h"
 
 #include "factory/Factory.h"
-#include "IControladorRegistrarUsuario.h"
-#include "IControladorRegistrarMaterial.h"
-#include "IControladorRegistrarPrestamo.h"
-#include "IControladorVerInfoMaterial.h"
-#include "IControladorSesion.h"
-#include "IControladorConsultarPrestamo.h"
-#include "Sesion.h"
+#include "interfaces/controllers/IControladorRegistrarUsuario.h"
+#include "interfaces/controllers/IControladorRegistrarMaterial.h"
+#include "interfaces/controllers/IControladorRegistrarPrestamo.h"
+#include "interfaces/controllers/IControladorVerInfoMaterial.h"
+#include "interfaces/controllers/IControladorSesion.h"
+#include "interfaces/controllers/IControladorConsultarPrestamo.h"
+#include "entities/Sesion.h"
 
 
 Sesion * s;
@@ -20,22 +20,8 @@ IControladorVerInfoMaterial *icvim;
 IControladorSesion *ics;
 IControladorConsultarPrestamo *iccp;
 
-
-
-
-
-
 int main()
 {
-    s = Sesion::getInstance();
-    f = Factory::getInstancia();
-    icru = f->getIControladorRegistrarUsuario();
-    icrm = f->getIControladorRegistrarMaterial();
-    icrp = f->getIControladorRegistrarPrestamo();
-    icvim = f->getIControladorVerInfoMaterial();
-    ics = f->getIControladorSesion();
-    iccp = f->getIControladorConsultarPrestamo();
-
     cargarDatos();
     menuAutenticacion();
     return 0;
