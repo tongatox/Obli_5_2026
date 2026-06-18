@@ -1,7 +1,7 @@
 #ifndef CONTROLADORREGISTRARMATERIAL_H
 #define CONTROLADORREGISTRARMATERIAL_H
 
-#include "../interfaces/controllers/IControladorRegistrarMaterial.h"
+#include "../interfaces/IControladorRegistrarMaterial.h"
 #include "../collections/MaterialCollection.h"
 #include "../datatypes/Fecha.h"
 #include "../entities/Libro.h"

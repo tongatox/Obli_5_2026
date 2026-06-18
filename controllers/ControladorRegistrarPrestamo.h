@@ -1,7 +1,7 @@
 #ifndef CONTROLADORREGISTRARPRESTAMO
 #define CONTROLADORREGISTRARPRESTAMO
 
-#include "../interfaces/controllers/IControladorRegistrarPrestamo.h"
+#include "../interfaces/IControladorRegistrarPrestamo.h"
 #include "../datatypes/Fecha.h"
 #include "../entities/Lector.h"
 #include "../entities/Prestamo.h"

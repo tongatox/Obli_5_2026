@@ -28,5 +28,6 @@ void ControladorSesion::cerrarSesion()
 
 void ControladorSesion::cancelar()
 {
-    // Implementar la lógica para cancelar el proceso de inicio de sesión
+    this->numId = "";
+    this->contraseña = "";
 }

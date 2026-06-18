@@ -17,7 +17,10 @@ void ControladorRegistrarPrestamo::registrarPrestamo(Fecha fechaPres, int diasPe
 
 void ControladorRegistrarPrestamo::cancelarPrestamo()
 {
-    // Implementación del método para cancelar el registro de un préstamo
+    this->fechaPres = Fecha(0, 0, 0);
+    this->diasPermi = 0;
+    this->numId = "";
+    this->codigo = "";
 }
 
 void ControladorRegistrarPrestamo::confirmarPrestamo()

@@ -1,12 +1,12 @@
 #ifndef CONTROLADORCONSULTARPRESTAMO_H
 #define CONTROLADORCONSULTARPRESTAMO_H
 
-#include "../interfaces/controllers/IControladorConsultarPrestamo.h"
+#include "../interfaces/IControladorConsultarPrestamo.h"
 
 class ControladorConsultarPrestamo : public IControladorConsultarPrestamo
 {
 public:
-    map<int, Prestamo*> consultarTodos() override;
+    map<int, Prestamo*> consultarPrestamos() override;
     Prestamo* consultarPrestamo(int id) override;
 };
 

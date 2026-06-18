@@ -3,12 +3,12 @@
 #include <iostream>
 #include <string>
 #include <map>
-#include "../interfaces/controllers/IControladorRegistrarUsuario.h"
-#include "../interfaces/controllers/IControladorRegistrarMaterial.h"
-#include "../interfaces/controllers/IControladorRegistrarPrestamo.h"
-#include "../interfaces/controllers/IControladorVerInfoMaterial.h"
-#include "../interfaces/controllers/IControladorSesion.h"
-#include "../interfaces/controllers/IControladorConsultarPrestamo.h"
+#include "../interfaces/IControladorRegistrarUsuario.h"
+#include "../interfaces/IControladorRegistrarMaterial.h"
+#include "../interfaces/IControladorRegistrarPrestamo.h"
+#include "../interfaces/IControladorVerInfoMaterial.h"
+#include "../interfaces/IControladorSesion.h"
+#include "../interfaces/IControladorConsultarPrestamo.h"
 #include "../factory/Factory.h"
 #include "../datatypes/Fecha.h"
 #include "../entities/Sesion.h"
@@ -26,9 +26,6 @@ IControladorVerInfoMaterial *iConVerInfoMaterial;
 IControladorConsultarPrestamo *iConConsultarPrestamo;
 IControladorSesion *iConSesion;
 
-// -----------------------------------------------------------------------
-// Submenú: Registro de funcionario (actor: Funcionario)
-// -----------------------------------------------------------------------
 static void menuRegistrarFuncionario()
 {
     iConRegistrarUsuario = factory->getIControladorRegistrarUsuario();
@@ -43,13 +40,26 @@ static void menuRegistrarFuncionario()
     cout << "Numero de empleado: "; cin >> numEmp; cin.ignore();
 
     iConRegistrarUsuario->registrarFuncionario(numId, nombre, contrasenia, numEmp);
-    iConRegistrarUsuario->confirmarFuncionario();
-    cout << "Funcionario registrado.\n";
+
+    cout << "\n-- Datos ingresados --\n";
+    cout << "ID        : " << numId << "\n";
+    cout << "Nombre    : " << nombre << "\n";
+    cout << "Num. Emp. : " << numEmp << "\n";
+    cout << "\n1. Confirmar\n2. Cancelar\nOpcion: ";
+    int op; cin >> op; cin.ignore();
+
+    if (op == 1)
+    {
+        iConRegistrarUsuario->confirmarFuncionario();
+        cout << "Funcionario registrado exitosamente.\n";
+    }
+    else
+    {
+        iConRegistrarUsuario->cancelarFuncionario();
+        cout << "Registro de funcionario cancelado.\n";
+    }
 }
 
-// -----------------------------------------------------------------------
-// Submenú: Registro de lector (actor: Funcionario)
-// -----------------------------------------------------------------------
 static void menuRegistrarLector()
 {
     iConRegistrarUsuario = factory->getIControladorRegistrarUsuario();
@@ -65,13 +75,26 @@ static void menuRegistrarLector()
     cin >> dia >> mes >> anio; cin.ignore();
 
     iConRegistrarUsuario->registrarLector(numId, nombre, contrasenia, Fecha(dia, mes, anio));
-    iConRegistrarUsuario->confirmarLector();
-    cout << "Lector registrado.\n";
+
+    cout << "\n-- Datos ingresados --\n";
+    cout << "ID      : " << numId << "\n";
+    cout << "Nombre  : " << nombre << "\n";
+    cout << "Fecha   : " << dia << "/" << mes << "/" << anio << "\n";
+    cout << "\n1. Confirmar\n2. Cancelar\nOpcion: ";
+    int op; cin >> op; cin.ignore();
+
+    if (op == 1)
+    {
+        iConRegistrarUsuario->confirmarLector();
+        cout << "Lector registrado exitosamente.\n";
+    }
+    else
+    {
+        iConRegistrarUsuario->cancelarLector();
+        cout << "Registro de lector cancelado.\n";
+    }
 }
 
-// -----------------------------------------------------------------------
-// Submenú: Registro de materiales - libro o revista
-// -----------------------------------------------------------------------
 static void menuRegistrarMaterial()
 {
     iConRegistrarMaterial = factory->getIControladorRegistrarMaterial();
@@ -94,12 +117,30 @@ static void menuRegistrarMaterial()
     {
         string autor;
         int cantPag;
-        cout << "Autor: ";          getline(cin, autor);
+        cout << "Autor: ";              getline(cin, autor);
         cout << "Cantidad de paginas: "; cin >> cantPag; cin.ignore();
 
         iConRegistrarMaterial->registrarLibro(codigo, titulo, anio, autor, cantPag);
-        iConRegistrarMaterial->confirmarLibro();
-        cout << "Libro registrado.\n";
+
+        cout << "\n-- Datos del Libro --\n";
+        cout << "Codigo  : " << codigo << "\n";
+        cout << "Titulo  : " << titulo << "\n";
+        cout << "Anio    : " << anio << "\n";
+        cout << "Autor   : " << autor << "\n";
+        cout << "Paginas : " << cantPag << "\n";
+        cout << "\n1. Confirmar\n2. Cancelar\nOpcion: ";
+        int op; cin >> op; cin.ignore();
+
+        if (op == 1)
+        {
+            iConRegistrarMaterial->confirmarLibro();
+            cout << "Libro registrado exitosamente.\n";
+        }
+        else
+        {
+            iConRegistrarMaterial->cancelarLibro();
+            cout << "Registro de libro cancelado.\n";
+        }
     }
     else if (opcion == 2)
     {
@@ -107,10 +148,29 @@ static void menuRegistrarMaterial()
         char mensual;
         cout << "Numero de edicion: "; cin >> numEdi; cin.ignore();
         cout << "Es mensual? (s/n): "; cin >> mensual; cin.ignore();
+        bool esMensual = (mensual == 's' || mensual == 'S');
 
-        iConRegistrarMaterial->registrarRevista(codigo, titulo, anio, numEdi, mensual == 's' || mensual == 'S');
-        iConRegistrarMaterial->confirmarRevista();
-        cout << "Revista registrada.\n";
+        iConRegistrarMaterial->registrarRevista(codigo, titulo, anio, numEdi, esMensual);
+
+        cout << "\n-- Datos de la Revista --\n";
+        cout << "Codigo  : " << codigo << "\n";
+        cout << "Titulo  : " << titulo << "\n";
+        cout << "Anio    : " << anio << "\n";
+        cout << "Edicion : " << numEdi << "\n";
+        cout << "Mensual : " << (esMensual ? "Si" : "No") << "\n";
+        cout << "\n1. Confirmar\n2. Cancelar\nOpcion: ";
+        int op; cin >> op; cin.ignore();
+
+        if (op == 1)
+        {
+            iConRegistrarMaterial->confirmarRevista();
+            cout << "Revista registrada exitosamente.\n";
+        }
+        else
+        {
+            iConRegistrarMaterial->cancelarRevista();
+            cout << "Registro de revista cancelado.\n";
+        }
     }
     else
     {
@@ -118,9 +178,6 @@ static void menuRegistrarMaterial()
     }
 }
 
-// -----------------------------------------------------------------------
-// Submenú: Registro de préstamos
-// -----------------------------------------------------------------------
 static void menuRegistrarPrestamo()
 {
     iConRegistrarPrestamo = factory->getIControladorRegistrarPrestamo();
@@ -151,13 +208,27 @@ static void menuRegistrarPrestamo()
     cin.ignore();
 
     iConRegistrarPrestamo->registrarPrestamo(Fecha(dia, mes, anio), diasPermi, numId, codigoMat);
-    iConRegistrarPrestamo->confirmarPrestamo();
-    cout << "Prestamo registrado.\n";
+
+    cout << "\n-- Datos del Prestamo --\n";
+    cout << "Lector   : " << numId << "\n";
+    cout << "Material : " << codigoMat << "\n";
+    cout << "Fecha    : " << dia << "/" << mes << "/" << anio << "\n";
+    cout << "Dias     : " << diasPermi << "\n";
+    cout << "\n1. Confirmar\n2. Cancelar\nOpcion: ";
+    int op; cin >> op; cin.ignore();
+
+    if (op == 1)
+    {
+        iConRegistrarPrestamo->confirmarPrestamo();
+        cout << "Prestamo registrado exitosamente.\n";
+    }
+    else
+    {
+        iConRegistrarPrestamo->cancelarPrestamo();
+        cout << "Registro de prestamo cancelado.\n";
+    }
 }
 
-// -----------------------------------------------------------------------
-// Submenú: Ver información de material (lector y funcionario)
-// -----------------------------------------------------------------------
 static void menuVerInfoMaterial()
 {
     iConVerInfoMaterial = factory->getIControladorVerInfoMaterial();
@@ -169,7 +240,7 @@ static void menuVerInfoMaterial()
         return;
     }
 
-    cout << "\n--- Materiales disponibles ---\n";
+    cout << "\nMateriales disponibles\n";
     for (auto const& x : todos)
     {
         Material* m = x.second;
@@ -189,7 +260,7 @@ static void menuVerInfoMaterial()
         return;
     }
 
-    cout << "\n--- Detalle del Material ---\n";
+    cout << "\nDetalle del Material\n";
     cout << "Tipo   : " << m->getTipo() << "\n";
     cout << "Codigo : " << m->getCodigo() << "\n";
     cout << "Titulo : " << m->getTitulo() << "\n";
@@ -210,22 +281,19 @@ static void menuVerInfoMaterial()
     }
 }
 
-// -----------------------------------------------------------------------
-// Submenú: Consultar préstamos (funcionario - ve todos)
-// -----------------------------------------------------------------------
 static void menuConsultarPrestamo()
 {
     iConConsultarPrestamo = factory->getIControladorConsultarPrestamo();
-    map<int, Prestamo*> todos = iConConsultarPrestamo->consultarTodos();
+    map<int, Prestamo*> prestamos = iConConsultarPrestamo->consultarPrestamos();
 
-    if (todos.empty())
+    if (prestamos.empty())
     {
         cout << "No hay prestamos registrados.\n";
         return;
     }
 
-    cout << "\n--- Prestamos registrados ---\n";
-    for (auto const& x : todos)
+    cout << "\nPrestamos registrados\n";
+    for (auto const& x : prestamos)
     {
         Prestamo* p = x.second;
         Fecha f = p->getFechasPres();
@@ -238,9 +306,6 @@ static void menuConsultarPrestamo()
     }
 }
 
-// -----------------------------------------------------------------------
-// Submenú: Consultar préstamos del lector en sesion (actor: Lector)
-// -----------------------------------------------------------------------
 static void menuConsultarMisPrestamos()
 {
     Usuario* u = Sesion::getInstance()->getUsuarioSesion();
@@ -250,7 +315,7 @@ static void menuConsultarMisPrestamos()
     Prestamo** prestamos = l->getPrestamo();
     bool hayPrestamos = false;
 
-    cout << "\n--- Mis Prestamos ---\n";
+    cout << "\nMis Prestamos\n";
     for (int i = 0; i < MAX_PRESTAMO; i++)
     {
         if (prestamos[i] == nullptr) break;
@@ -271,17 +336,12 @@ static void menuConsultarMisPrestamos()
     delete[] prestamos;
 }
 
-// -----------------------------------------------------------------------
-// Menú para el Lector
-// -----------------------------------------------------------------------
 static void menuLector()
 {
     int opcion = 0;
     while (opcion != 3)
     {
-        cout << "\n=============================\n";
-        cout << "       Menu Lector\n";
-        cout << "=============================\n";
+        cout << "\nMenu Lector\n";
         cout << "1. Ver Informacion Material\n";
         cout << "2. Consultar mis Prestamos\n";
         cout << "3. Cerrar Sesion\n";
@@ -303,17 +363,12 @@ static void menuLector()
     }
 }
 
-// -----------------------------------------------------------------------
-// Menú para el Funcionario
-// -----------------------------------------------------------------------
 static void menuFuncionario()
 {
     int opcion = 0;
     while (opcion != 7)
     {
-        cout << "\n=============================\n";
-        cout << "      Menu Funcionario\n";
-        cout << "=============================\n";
+        cout << "\nMenu Funcionario\n";
         cout << "1. Registrar Funcionario\n";
         cout << "2. Registrar Lector\n";
         cout << "3. Registrar Material\n";
@@ -343,9 +398,6 @@ static void menuFuncionario()
     }
 }
 
-// -----------------------------------------------------------------------
-// Menú principal - para la interacción con el usuario 
-// -----------------------------------------------------------------------
 void menuPrincipal()
 {
     factory = Factory::getInstancia();
@@ -353,6 +405,7 @@ void menuPrincipal()
     
     if (user == nullptr) return;
 
+    // muestra el menu correspondiente al tipo de usuario
     if (user->getTipo() == "Funcionario")
     {
         menuFuncionario();
@@ -363,9 +416,6 @@ void menuPrincipal()
     }
 }
 
-// -----------------------------------------------------------------------
-// Menú para Autenticarse
-// -----------------------------------------------------------------------
 void menuAutenticacion()
 {
     factory = Factory::getInstancia();
@@ -373,9 +423,7 @@ void menuAutenticacion()
 
     while (opcion != 2)
     {
-        cout << "\n=============================\n";
-        cout << "   Sistema de Biblioteca\n";
-        cout << "=============================\n";
+        cout << "\nSistema de Biblioteca\n";
         cout << "1. Iniciar Sesion\n";
         cout << "2. Salir\n";
         cout << "Opcion: ";
@@ -387,7 +435,7 @@ void menuAutenticacion()
             iConSesion = factory->getIControladorSesion();
 
             string numId, contrasenia;
-            cout << "\n--- Iniciar Sesion ---\n";
+            cout << "\nIniciar Sesion\n";
             cout << "Numero de ID: ";
             getline(cin, numId);
             cout << "Contraseña: ";
@@ -395,17 +443,19 @@ void menuAutenticacion()
 
             if (iConSesion->ingresarDatos(numId, contrasenia))
             {
-                cout << "Inicio de sesion exitoso.\n";
+                Usuario* user = Sesion::getInstance()->getUsuarioSesion();
+                cout << "Sesion iniciada exitosamente. Bienvenido/a, "
+                     << user->getNombre() << " (" << user->getTipo() << ").\n";
                 menuPrincipal();
             }
             else
             {
-                cout << "Credenciales incorrectas. Intente nuevamente.\n";
+                cout << "Datos incorrectos. Intente nuevamente.\n";
             }
         }
         else if (opcion == 2)
         {
-            cout << "Hasta luego.\n";
+            cout << "Chauuu!!.\n";
         }
         else
         {

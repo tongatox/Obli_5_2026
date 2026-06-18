@@ -1,11 +1,11 @@
 #ifndef ICONTROLADORREGISTRARPRESTAMO
 #define ICONTROLADORREGISTRARPRESTAMO
 
-#include "../../datatypes/Fecha.h"
-#include "../../entities/Prestamo.h"
-#include "../../collections/UsuarioCollection.h"
-#include "../../collections/MaterialCollection.h"
-#include "../../collections/PrestamoCollection.h"
+#include "../datatypes/Fecha.h"
+#include "../entities/Prestamo.h"
+#include "../collections/UsuarioCollection.h"
+#include "../collections/MaterialCollection.h"
+#include "../collections/PrestamoCollection.h"
 #include <string>
 using namespace std;
 

@@ -1,7 +1,7 @@
 #ifndef CONTROLADORVERINFOMATERIAL_H
 #define CONTROLADORVERINFOMATERIAL_H
 
-#include "../interfaces/controllers/IControladorVerInfoMaterial.h"
+#include "../interfaces/IControladorVerInfoMaterial.h"
 #include "../entities/Material.h"
 #include <map>
 #include <string>

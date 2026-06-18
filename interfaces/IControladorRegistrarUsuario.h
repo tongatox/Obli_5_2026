@@ -1,8 +1,10 @@
 #ifndef ICONTROLADORREGISTRARUSUARIO_H
 #define ICONTROLADORREGISTRARUSUARIO_H
 
-#include "../../datatypes/Fecha.h"
-#include "../../entities/Usuario.h"
+#include "../datatypes/Fecha.h"
+#include "../entities/Usuario.h"
+#include <string>
+using namespace std;
 
 class IControladorRegistrarUsuario
 {

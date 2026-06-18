@@ -14,7 +14,10 @@ void ControladorRegistrarUsuario::registrarLector(string numId, string nombre, s
 
 void ControladorRegistrarUsuario::cancelarLector()
 {
-    // Implementación del método para cancelar el registro de un lector
+    this->numId = "";
+    this->nombre = "";
+    this->contraseña = "";
+    this->fechaRegistro = Fecha(0, 0, 0);
 }
 
 void ControladorRegistrarUsuario::confirmarLector()
@@ -35,7 +38,10 @@ void ControladorRegistrarUsuario::registrarFuncionario(string numId, string nomb
 
 void ControladorRegistrarUsuario::cancelarFuncionario()
 {
-    // Implementación del método para cancelar el registro de un funcionario
+    this->numId = "";
+    this->nombre = "";
+    this->contraseña = "";
+    this->numEmp = 0;
 }
 
 void ControladorRegistrarUsuario::confirmarFuncionario()

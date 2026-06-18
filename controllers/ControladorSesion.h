@@ -1,7 +1,7 @@
 #ifndef CONTROLADORSESION
 #define CONTROLADORSESION
 
-#include "../interfaces/controllers/IControladorSesion.h"
+#include "../interfaces/IControladorSesion.h"
 
 class ControladorSesion : public IControladorSesion
 {

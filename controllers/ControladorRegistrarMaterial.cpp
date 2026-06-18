@@ -17,7 +17,11 @@ void ControladorRegistrarMaterial::registrarLibro(string codigo, string titulo, 
 
 void ControladorRegistrarMaterial::cancelarLibro()
 {
-    // Implementación del método para cancelar el registro de un libro
+    this->codigo = "";
+    this->titulo = "";
+    this->anioPublicacion = 0;
+    this->autor = "";
+    this->cantPag = 0;
 }
 
 void ControladorRegistrarMaterial::confirmarLibro()
@@ -38,7 +42,11 @@ void ControladorRegistrarMaterial::registrarRevista(string codigo, string titulo
 
 void ControladorRegistrarMaterial::cancelarRevista()
 {
-    // Implementación del método para cancelar el registro de una revista
+    this->codigo = "";
+    this->titulo = "";
+    this->anioPublicacion = 0;
+    this->numEdi = 0;
+    this->esMensual = false;
 }
 
 void ControladorRegistrarMaterial::confirmarRevista()

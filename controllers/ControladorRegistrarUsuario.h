@@ -1,7 +1,7 @@
 #ifndef CONTROLADORREGISTRARUSUARIO_H
 #define CONTROLADORREGISTRARUSUARIO_H
 
-#include "../interfaces/controllers/IControladorRegistrarUsuario.h"
+#include "../interfaces/IControladorRegistrarUsuario.h"
 #include "../collections/UsuarioCollection.h"
 #include "../datatypes/Fecha.h"
 #include "../entities/Usuario.h"

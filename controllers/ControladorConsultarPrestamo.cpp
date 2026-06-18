@@ -1,7 +1,7 @@
 #include "ControladorConsultarPrestamo.h"
 #include "../collections/PrestamoCollection.h"
 
-map<int, Prestamo*> ControladorConsultarPrestamo::consultarTodos()
+map<int, Prestamo*> ControladorConsultarPrestamo::consultarPrestamos()
 {
     return PrestamoCollection::getInstance()->listar();
 }
