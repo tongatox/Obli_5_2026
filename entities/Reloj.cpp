@@ -46,8 +46,9 @@ Reloj::~Reloj() {}
 
 
 void Reloj::getFechaHoraActual()
-{
+{  
+    cout << endl;
    cout << "[" << this->dia << "/" << this->mes << "/" << this->anio << "  "
-        << this->horas << ":" << this->minutos << ":" << this->segundos << "]";
+        << this->horas << ":" << this->minutos << ":" << this->segundos << "]" << endl;
     system("sleep 1");
 }
