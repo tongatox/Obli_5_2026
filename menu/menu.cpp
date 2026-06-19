@@ -3,6 +3,8 @@
 #include <iostream>
 #include <string>
 #include <map>
+#include <ctime>
+#include "../Reloj/Reloj.h"
 #include "../interfaces/IControladorRegistrarUsuario.h"
 #include "../interfaces/IControladorRegistrarMaterial.h"
 #include "../interfaces/IControladorRegistrarPrestamo.h"
@@ -16,6 +18,7 @@
 #include "../entities/Libro.h"
 #include "../entities/Revista.h"
 
+
 using namespace std;
 
 Factory *factory;
@@ -25,7 +28,7 @@ IControladorRegistrarPrestamo *iConRegistrarPrestamo;
 IControladorVerInfoMaterial *iConVerInfoMaterial;
 IControladorConsultarPrestamo *iConConsultarPrestamo;
 IControladorSesion *iConSesion;
-
+Reloj *reloj;
 static void menuRegistrarFuncionario()
 {
     iConRegistrarUsuario = factory->getIControladorRegistrarUsuario();
@@ -339,12 +342,13 @@ static void menuConsultarMisPrestamos()
 static void menuLector()
 {
     int opcion = 0;
-    while (opcion != 3)
+    while (opcion != 4)
     {
         cout << "\nMenu Lector\n";
         cout << "1. Ver Informacion Material\n";
         cout << "2. Consultar mis Prestamos\n";
-        cout << "3. Cerrar Sesion\n";
+        cout << "3. Consultar Fecha y Hora Actual\n";
+        cout << "4. Cerrar Sesion\n";
         cout << "Opcion: ";
         cin >> opcion;
         cin.ignore();
@@ -353,7 +357,11 @@ static void menuLector()
         {
             case 1: menuVerInfoMaterial();     break;
             case 2: menuConsultarMisPrestamos(); break;
-            case 3:
+            case 3: 
+                reloj = Reloj::getInstance();
+                reloj->getFechaHoraActual();
+                break;
+            case 4:
                 iConSesion = factory->getIControladorSesion();
                 iConSesion->cerrarSesion();
                 cout << "Sesion cerrada.\n";
@@ -366,7 +374,7 @@ static void menuLector()
 static void menuFuncionario()
 {
     int opcion = 0;
-    while (opcion != 7)
+    while (opcion != 8)
     {
         cout << "\nMenu Funcionario\n";
         cout << "1. Registrar Funcionario\n";
@@ -375,7 +383,8 @@ static void menuFuncionario()
         cout << "4. Registrar Prestamo\n";
         cout << "5. Ver Informacion Material\n";
         cout << "6. Consultar Prestamos\n";
-        cout << "7. Cerrar Sesion\n";
+        cout << "7. Consultar Fecha y Hora Actual\n";
+        cout << "8. Cerrar Sesion\n";
         cout << "Opcion: ";
         cin >> opcion;
         cin.ignore();
@@ -389,6 +398,10 @@ static void menuFuncionario()
             case 5: menuVerInfoMaterial();      break;
             case 6: menuConsultarPrestamo();    break;
             case 7:
+                reloj = Reloj::getInstance();
+                reloj->getFechaHoraActual();
+                break;
+            case 8:
                 iConSesion = factory->getIControladorSesion();
                 iConSesion->cerrarSesion();
                 cout << "Sesion cerrada.\n";

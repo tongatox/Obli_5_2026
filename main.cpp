@@ -9,6 +9,7 @@
 #include "interfaces/IControladorSesion.h"
 #include "interfaces/IControladorConsultarPrestamo.h"
 #include "entities/Sesion.h"
+#include "Reloj/Reloj.h"
 
 
 Sesion * s;
@@ -19,6 +20,7 @@ IControladorRegistrarPrestamo *icrp;
 IControladorVerInfoMaterial *icvim;
 IControladorSesion *ics;
 IControladorConsultarPrestamo *iccp;
+Reloj *reloj;
 
 int main()
 {
