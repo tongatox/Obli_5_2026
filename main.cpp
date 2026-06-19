@@ -20,7 +20,6 @@ IControladorRegistrarPrestamo *icrp;
 IControladorVerInfoMaterial *icvim;
 IControladorSesion *ics;
 IControladorConsultarPrestamo *iccp;
-Reloj *reloj;
 
 int main()
 {
