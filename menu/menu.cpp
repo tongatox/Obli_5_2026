@@ -4,7 +4,7 @@
 #include <string>
 #include <map>
 #include <ctime>
-#include "../Reloj/Reloj.h"
+#include "../entities/Reloj.h"
 #include "../interfaces/IControladorRegistrarUsuario.h"
 #include "../interfaces/IControladorRegistrarMaterial.h"
 #include "../interfaces/IControladorRegistrarPrestamo.h"

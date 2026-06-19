@@ -9,7 +9,7 @@
 #include "interfaces/IControladorSesion.h"
 #include "interfaces/IControladorConsultarPrestamo.h"
 #include "entities/Sesion.h"
-#include "Reloj/Reloj.h"
+#include "entities/Reloj.h"
 
 
 Sesion * s;
